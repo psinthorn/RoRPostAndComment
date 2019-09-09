@@ -4,7 +4,7 @@
       <%= @message.title %>
     </h1>
     <p class="message-posted-by">
-      <%= time_ago_in_words(@message.created_at) %> ago %>
+      <%= time_ago_in_words(@message.created_at) %> ago
     </p>
     <div class="message-desc">
       <%= @message.desc %>
@@ -12,6 +12,12 @@
     <br />
     <div class="links btn-group">
       <%= link_to "Back", root_path, class: "btn btn-default" %>
+      <%= link_to "Edit", edit_message_path(@message), class: "btn btn-warning"
+      %>
+       <%= link_to "Delete", message_path(@message), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"
+      %>
+
     </div>
+   
   </div>
 </div>
