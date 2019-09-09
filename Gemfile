@@ -33,6 +33,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'simple_form', '~> 4.1'
   gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+  gem 'devise', '~> 4.7', '>= 4.7.1'
+  
 end
 
 group :development do
