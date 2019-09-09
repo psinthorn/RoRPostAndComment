@@ -16,10 +16,33 @@
   </head>
 
   <body>
+  <nav class="navbar navbar-default"> 
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to "Football Control", root_path, class: "navbar-brand" %>
+      </div>
 
-   <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  
-    <%= yield %>
+      <ul class="navbar-nav nav navbar-right">
+        <% if user_signed_in? %>
+          <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to "Log In", new_user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+       <% if user_signed_in? %>
+        <p><%= link_to "New Post", new_message_path, class: "navbar-text navbar-link" %></p>
+       <% end %>
+    </nav>
+    <div class="container">
+      <p class="notice success"><%= notice %></p>
+      <p class="alert danger"><%= alert %></p>
+    </div>
+  </div>
+
+      <div class="container">
+        <%= yield %>
+      </div>
+      
   </body>
 </html>
