@@ -9,6 +9,13 @@
     <div class="message-desc">
       <%= @message.desc %>
     </div>
+
+    <h3 class="comment-section-header">
+        <%= render @message.comments %>
+    </h3>
+     <h3 class="reply-to-msg">
+        <%= render "comments/form" %>
+     </h3>
     <br />
     <div class="links btn-group">
       <%= link_to "Back", root_path, class: "btn btn-default" %>
